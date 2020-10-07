@@ -1,3 +1,7 @@
-# File-Transfer
-**File Transfer Application from android to android
-**Hello I am creating the application for transfering files
+<h1><b>File Transfer App</b></h1>
+<p>Share your file, with anyone</p>
+
+<br>
+<h2>Features</h2>
+<h2> Technologies/Concepts Used</h2>
+<h2>Why this APP</h2>
