@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -40,31 +42,10 @@ public class HomeActivity extends AppCompatActivity {
         wifiManager = (WifiManager)getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         Connection_status = findViewById(R.id.textView3);
 
-        if(wifiManager.isWifiEnabled()){
-            Connection_status.setText("WIFI is currently ON");
-            wifi_toggle.setChecked(false);
+        if(wifiManager.isWifiEnabled()!=true) {
+            Intent callWifiSetting = new Intent(Settings.ACTION_WIFI_SETTINGS);
+            startActivity(callWifiSetting);
         }
-        else{
-            Connection_status.setText("WIFI is currently OFF");
-            wifi_toggle.setChecked(false);
-        }
-
-        wifi_toggle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if(b)
-                {
-                    wifiManager.setWifiEnabled(true);
-                    Connection_status.setText("WIFI is currently ON");
-                    Toast.makeText(HomeActivity.this,"WIFI IS ON",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    wifiManager.setWifiEnabled(false);
-                    Toast.makeText(HomeActivity.this,"WIFI IS TURNING ON",Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
         // toast message
        /* new AlertDialog.Builder(this)
