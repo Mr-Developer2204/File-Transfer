@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">FileTransfer</string>
+
+
+    <string name="category_images">Images</string>
+
+    <string name="category_videos">Videos</string>
+
+    <string name="category_audio">Audios</string>
+
+    <string name="category_other">Others</string>
+</resources>
