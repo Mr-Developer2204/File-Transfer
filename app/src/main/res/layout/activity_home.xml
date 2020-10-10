@@ -31,18 +31,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="86dp"
         android:layout_marginLeft="86dp"
-        android:layout_marginTop="321dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="68dp"
         android:layout_marginRight="68dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginBottom="184dp"
         android:text="SEND"
         android:textColorLink="#03E0F4"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button2"
@@ -50,17 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
-        android:layout_marginTop="406dp"
+        android:layout_marginTop="340dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginBottom="184dp"
         android:text="RECIEVE"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button3"
@@ -78,44 +76,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <Switch
-        android:id="@+id/switch2"
+    <Button
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginLeft="161dp"
-        android:layout_marginTop="90dp"
-        android:layout_marginEnd="157dp"
-        android:layout_marginRight="157dp"
-        android:layout_marginBottom="131dp"
-        android:text="WIFI"
-        android:textColor="#FFFFFFFF"
-        android:theme="@style/SCBSwitch"
-        app:layout_constraintBottom_toTopOf="@+id/button3"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="153dp"
+        android:layout_marginRight="153dp"
+        android:layout_marginBottom="97dp"
+        android:text="FILES"
+        android:onClick="clickTemporary"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="81dp"
-        android:layout_marginLeft="81dp"
-        android:layout_marginTop="45dp"
-        android:layout_marginEnd="82dp"
-        android:layout_marginRight="82dp"
-        android:layout_marginBottom="21dp"
-        android:fontFamily="@font/comfortaa_light"
-        android:text="WIFI is currently OFF"
-        android:textColor="#FFFFFFFF"
-        android:textSize="18dp"
-        app:fontFamily="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/switch2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
