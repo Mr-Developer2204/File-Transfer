@@ -1,4 +1,6 @@
-<h1>INTRODUCTION</h1> 
+<h1>FILE TRANSFERING APP</h1>
+
+<h2>INTRODUCTION</h2> 
 <p>
 The File Transfer Application is a simple android application that can be used to transfer your files from one android device to another android device in close proximity. The idea behind this application is to make transfers easy and fast for people having internet issues.
 This app solves the problem of transferring files from one android device to another android device without the internet. It eliminates the old Bluetooth transfers and transfers files using wifi which provides much faster data transfers. You can share music, images, documents, etc without any mobile data usage.
@@ -7,10 +9,10 @@ This app solves the problem of transferring files from one android device to ano
 <h2>TECHNOLOGY:</h2>
 <pre>
 This application works  on P2P(Peer To Peer) networking technology.
-
+<br>
 P2P networking is a type of networking where there is no need for a centralized server , each node works both as server and client. 
 The individual users in this network are referred to as peers. The peers request for the files from other peers by establishing TCP or UDP connections.Each node has a particular ID assigned, by which they can identify internally.
-
+<br>
 When one peer makes a request, it is possible that multiple peers have the copy of that requested object. Now the problem is how to get the IP addresses of all those peers. This is decided by the underlying architecture supported by the P2P systems. By means of one of these methods, the client peer can get to know about all the peers which have the requested object/file and the file transfer takes place directly between these two peers.
 </pre>
 
@@ -19,7 +21,7 @@ When one peer makes a request, it is possible that multiple peers have the copy 
 <h3>Enabling - Disabling - Discovering WIFI :</h3>
 <pre>
 We have used WifiP2pManager class provided by  Google Android.This class provides the API for managing Wi-Fi peer-to-peer connectivity. This lets an application discover available peers, setup connection to peers and query for the list of peers. When a p2p connection is formed over wifi, the device continues to maintain the uplink connection over mobile or any other available network for internet connectivity on the device.
-
+<br>
 So  after , discovering other devices (Client/Server), we need to establish the connection between the two.
  </pre>
 
