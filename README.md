@@ -31,19 +31,20 @@ So  after , discovering other devices (Client/Server), we need to establish the 
 (Sending requests and getting response)
  Client will send a request to the server , to which  the server will respond .We have achieved this feature by socket programming in our app.
 
-Socket :
+<b>Socket :</b>
+</br>
 A network socket is a software structure within a network node of a computer network that serves as an endpoint for sending and receiving data across the network. The structure and properties of a socket are defined by an application programming interface for the networking architecture.
-
+</br>
 Sockets allow communication between two different processes on the same or different machines. 
-
+</br>
 
 Following is the flow of events for a socket:
  
 The socket() API creates an endpoint for communications and returns a socket descriptor that represents the endpoint.
 When an application has a socket descriptor, it can bind a unique name to the socket. Servers must bind a name to be accessible from the network.
 The listen() API indicates a willingness to accept client connection requests. When a listen() API is issued for a socket, that socket cannot actively initiate connection requests. The listen() API is issued after a socket is allocated with a socket() API and the bind() API binds a name to the socket. A listen() API must be issued before an accept() API is issued.
-The client application uses a connect() API on a stream socket to establish a connection to the server.
-The server application uses the accept() API to accept a client connection request. The server must issue the bind() and listen() APIs successfully before it can issue an accept() API.
+</br>The client application uses a connect() API on a stream socket to establish a connection to the server.
+The server application uses the accept() API to accept a client connection request. The server must issue the bind() and listen() APIs successfully before it can issue an accept() API.</br>
 When a connection is established between stream sockets (between client and server), you can use any of the socket API data transfer APIs. Clients and servers have many data transfer APIs from which to choose, such as send(), recv(), read(), write(), and others.
 When a server or client wants to stop operations, it issues a close() API to release any system resources acquired by the socket.
   </p>
