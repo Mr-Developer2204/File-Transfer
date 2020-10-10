@@ -7,27 +7,27 @@ This app solves the problem of transferring files from one android device to ano
 </p>
 
 <h2>TECHNOLOGY:</h2>
-<pre>
+<p>
 This application works  on P2P(Peer To Peer) networking technology.
 <br>
 P2P networking is a type of networking where there is no need for a centralized server , each node works both as server and client. 
 The individual users in this network are referred to as peers. The peers request for the files from other peers by establishing TCP or UDP connections.Each node has a particular ID assigned, by which they can identify internally.
 <br>
 When one peer makes a request, it is possible that multiple peers have the copy of that requested object. Now the problem is how to get the IP addresses of all those peers. This is decided by the underlying architecture supported by the P2P systems. By means of one of these methods, the client peer can get to know about all the peers which have the requested object/file and the file transfer takes place directly between these two peers.
-</pre>
+</p>
 
 <h2>Working/Steps :</h2>
 
 <h3>Enabling - Disabling - Discovering WIFI :</h3>
-<pre>
+<p>
 We have used WifiP2pManager class provided by  Google Android.This class provides the API for managing Wi-Fi peer-to-peer connectivity. This lets an application discover available peers, setup connection to peers and query for the list of peers. When a p2p connection is formed over wifi, the device continues to maintain the uplink connection over mobile or any other available network for internet connectivity on the device.
 <br>
 So  after , discovering other devices (Client/Server), we need to establish the connection between the two.
- </pre>
+ </p>
 
 
 <h3>Server- Client connection:</h3>
-<pre>
+<p>
 (Sending requests and getting response)
  Client will send a request to the server , to which  the server will respond .We have achieved this feature by socket programming in our app.
 
@@ -46,33 +46,33 @@ The client application uses a connect() API on a stream socket to establish a co
 The server application uses the accept() API to accept a client connection request. The server must issue the bind() and listen() APIs successfully before it can issue an accept() API.
 When a connection is established between stream sockets (between client and server), you can use any of the socket API data transfer APIs. Clients and servers have many data transfer APIs from which to choose, such as send(), recv(), read(), write(), and others.
 When a server or client wants to stop operations, it issues a close() API to release any system resources acquired by the socket.
-  </pre>
+  </p>
   
 <h3>Programmatically:</h3>
-<pre>
+<p>
 To achieve it programmatically ,
  we will use
-
+<br>
 <b>java.net.Socket class:</b> represents the socket between the client and the server
-
+</br>
 <b>java.net.ServerSocket class :</b> provides a mechanism for the server application to listen to clients and establish connections with them. 
 
 (will add as we proceed)
-</pre>
+</p>
 
 <h2>FEATURES:</h2>
-<pre>
-
+<p>
+</br>
 1.Enabling /Disabling WIFI and Hotspot .
-
+</br>
 2. Discovering  and displaying the nearer devices.
-
+</br>
 3.Establishing connection between the devices.
-
+</br>
 4. Accessing and displaying the files stored in external(shared storage space) storage .
-
+</br>
 5. Selecting single or multiple files (with different valid extensions) 
-
+</br>
 6.Sending selected files to other devices.
-
-</pre>
+</br>
+</p>
