@@ -4,14 +4,16 @@
 <p>
 The File Transfer Application is a simple android application that can be used to transfer your files from one android device to another android device in close proximity. The idea behind this application is to make transfers easy and fast for people having internet issues.
 This app solves the problem of transferring files from one android device to another android device without the internet. It eliminates the old Bluetooth transfers and transfers files using wifi which provides much faster data transfers. You can share music, images, documents, etc without any mobile data usage.
- <img src="https://github.com/Mr-Developer2204/File-Transfer/blob/master/Images_GifUsed/connected.gif" />
+ 
 </p>
 
 <h2>TECHNOLOGY:</h2>
 <p>
 This application works  on P2P(Peer To Peer) networking technology.
 <br>
-P2P networking is a type of networking where there is no need for a centralized server , each node works both as server and client. 
+P2P networking is a type of networking where there is no need for a centralized server , each node works both as server and client. <br>
+<img src="https://github.com/Mr-Developer2204/File-Transfer/blob/master/Images_GifUsed/connected.gif" /><br>
+ 
 The individual users in this network are referred to as peers. The peers request for the files from other peers by establishing TCP or UDP connections.Each node has a particular ID assigned, by which they can identify internally.
 <br>
 When one peer makes a request, it is possible that multiple peers have the copy of that requested object. Now the problem is how to get the IP addresses of all those peers. This is decided by the underlying architecture supported by the P2P systems. By means of one of these methods, the client peer can get to know about all the peers which have the requested object/file and the file transfer takes place directly between these two peers.
