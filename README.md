@@ -4,6 +4,7 @@
 <p>
 The File Transfer Application is a simple android application that can be used to transfer your files from one android device to another android device in close proximity. The idea behind this application is to make transfers easy and fast for people having internet issues.
 This app solves the problem of transferring files from one android device to another android device without the internet. It eliminates the old Bluetooth transfers and transfers files using wifi which provides much faster data transfers. You can share music, images, documents, etc without any mobile data usage.
+ <img src="https://github.com/Mr-Developer2204/File-Transfer/blob/master/Images_GifUsed/connected.gif" />
 </p>
 
 <h2>TECHNOLOGY:</h2>
