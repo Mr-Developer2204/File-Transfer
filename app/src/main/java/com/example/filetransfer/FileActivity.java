@@ -21,7 +21,7 @@ public class FileActivity extends AppCompatActivity {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent imageIntent = new Intent(FileActivity.this, ImageActivity.class);
+                Intent imageIntent = new Intent(FileActivity.this, Filedrawer.class);
                 startActivity(imageIntent);
             }
         });
