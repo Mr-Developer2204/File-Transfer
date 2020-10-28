@@ -6,14 +6,17 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
@@ -36,8 +39,11 @@ public class HomeActivity extends AppCompatActivity {
     EditText wrt_msg;
     LocationManager locationManager;
     WifiManager wifiManager;
+    WifiP2pManager mManager;
+    WifiP2pManager.Channel mChannel;
     LocationManager Loc;
-
+    BroadcastReceiver receiver;
+    IntentFilter filter;
 
 
     @Override
@@ -50,6 +56,13 @@ public class HomeActivity extends AppCompatActivity {
         DISCOVER = findViewById(R.id.button3);
         FILES = findViewById(R.id.button4);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+        mManager =(WifiP2pManager) (getSystemService(Context.WIFI_P2P_SERVICE));
+        mChannel = mManager.initialize(this,getMainLooper(),null);
+        receiver = new WifiDirectBroadcastReceiver(mManager,mChannel,this);
+        filter = new IntentFilter();
+
+
+
 
 
         SEND.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +88,10 @@ public class HomeActivity extends AppCompatActivity {
                 Intent callWifiSetting = new Intent(Settings.ACTION_WIFI_SETTINGS);
                 Toast.makeText(HomeActivity.this,"WIFI is required",Toast.LENGTH_LONG).show();
                 startActivity(callWifiSetting);
+                filter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
+                filter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
+                filter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
+                filter.addAction(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION);
                 if(wifiManager.isWifiEnabled()){
                     Toast.makeText(HomeActivity.this,"Wifi is turning ON",Toast.LENGTH_SHORT).show();
                 }
@@ -97,7 +114,19 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
-  public void clickTemporary(View view){
+    @Override
+    protected void onResume() {
+        super.onResume();
+        registerReceiver(receiver,filter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(receiver);
+    }
+
+    public void clickTemporary(View view){
     Intent file =new Intent(HomeActivity.this,FileActivity.class);
     startActivity(file);
     }
