@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#333333"
     tools:context=".HomeActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/pexelspost"
+        android:scaleType="centerCrop"
+        android:alpha="0.8" />
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="213dp"
-        android:layout_height="155dp"
+        android:layout_width="230dp"
+        android:layout_height="159dp"
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="58dp"
@@ -19,7 +25,7 @@
         android:text="LET'S   EXCHANGE"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFFFF"
-        android:textSize="30sp"
+        android:textSize="32sp"
         app:fontFamily="@font/bungee"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,5 +98,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

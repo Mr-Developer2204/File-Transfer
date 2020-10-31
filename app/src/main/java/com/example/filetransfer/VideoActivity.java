@@ -19,6 +19,7 @@ public class VideoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_filedrawer);
         selectImage();
     }
+
     static final int REQUEST_GET = 1;
     public void selectImage() {
         Intent actionIntent = new Intent(Intent.ACTION_GET_CONTENT);
