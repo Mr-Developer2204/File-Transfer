@@ -69,7 +69,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public void intialization()
     {
-        SEND = findViewById(R.id.button);
+        SEND =  findViewById(R.id.button);
         RECEIVE = findViewById(R.id.button2);
         SERVER = findViewById(R.id.button10);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
