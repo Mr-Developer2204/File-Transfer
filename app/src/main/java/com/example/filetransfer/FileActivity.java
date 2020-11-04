@@ -1,13 +1,19 @@
 package com.example.filetransfer;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FileActivity extends AppCompatActivity {
+
+    static final int REQUEST_GET=1;
+    public static String file_path;
+    public static int choose =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,8 +27,12 @@ public class FileActivity extends AppCompatActivity {
             // The code in this method will be executed when the numbers View is clicked on.
             @Override
             public void onClick(View view) {
-                Intent imageIntent = new Intent(FileActivity.this, Filedrawer.class);
-                startActivity(imageIntent);
+
+                Intent myimageIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                myimageIntent.setType("image/*");
+                startActivityForResult(myimageIntent, REQUEST_GET);
+
+
             }
         });
 
@@ -30,8 +40,9 @@ public class FileActivity extends AppCompatActivity {
         video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent videoIntent = new Intent(FileActivity.this, VideoActivity.class);
-                startActivity(videoIntent);
+                Intent myvideoIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                myvideoIntent.setType("video/*");
+                startActivityForResult(myvideoIntent, REQUEST_GET);
             }
         });
 
@@ -40,8 +51,9 @@ public class FileActivity extends AppCompatActivity {
         other.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent otherIntent = new Intent(FileActivity.this, OtherActivity.class);
-                startActivity(otherIntent);
+                Intent myfileIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                myfileIntent.setType("*/*");
+                startActivityForResult(myfileIntent, REQUEST_GET);
             }
         });
 
@@ -49,9 +61,26 @@ public class FileActivity extends AppCompatActivity {
         audio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent audioIntent = new Intent(FileActivity.this, AudioActivity.class);
-                startActivity(audioIntent);
+                Intent myaudioIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                myaudioIntent.setType("audio/*");
+                startActivityForResult(myaudioIntent, REQUEST_GET);
+
             }
         });
     }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        file_path="";
+        if(requestCode==REQUEST_GET && resultCode==RESULT_OK){
+            Uri fullPhoto = data.getData();
+            file_path=fullPhoto.getPath()+"";
+            Intent intent = new Intent(FileActivity.this,Server.class);
+            intent.putExtra("file",file_path);
+            intent.putExtra("selected",fullPhoto);
+            startActivity(intent);
+        }
+    }
+
 }

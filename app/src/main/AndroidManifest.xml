@@ -2,20 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.filetransfer">
 
-    <uses-permission
-        android:name="android.permission.ACCESS_FINE_LOCATION"
-        android:required="true" />
-    <uses-permission
-        android:name="android.permission.ACCESS_WIFI_STATE"
-        android:required="true" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission
-        android:name="android.permission.INTERNET"
-        android:required="true" />
-    <uses-permission
-        android:name="android.permission.CHANGE_NETWORK_STATE"
-        android:required="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -24,10 +17,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Filedrawer"></activity>
+        <activity android:name=".Client"></activity>
+        <activity android:name=".Server" />
+        <activity android:name=".WifiScanner" />
+        <activity android:name=".Filedrawer" />
         <activity
             android:name=".HomeActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
@@ -40,18 +36,6 @@
         <activity
             android:name=".FileActivity"
             android:label="Files" />
-        <activity
-            android:name=".AudioActivity"
-            android:label="Audio Files" />
-        <activity
-            android:name=".OtherActivity"
-            android:label="Other Files" />
-        <activity
-            android:name=".VideoActivity"
-            android:label="Videos" />
-        <activity
-            android:name=".ImageActivity"
-            android:label="Images" />
 
         <meta-data
             android:name="preloaded_fonts"
