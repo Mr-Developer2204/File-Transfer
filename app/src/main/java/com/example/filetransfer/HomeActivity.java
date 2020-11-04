@@ -77,7 +77,6 @@ public class HomeActivity extends AppCompatActivity {
         mChannel = mManager.initialize(this, getMainLooper(), null);
         receiver = new WifiDirectBroadcastReceiver(mManager, mChannel, HomeActivity.this);
         filter = new IntentFilter();
-
         filter.addAction(WifiP2pManager.WIFI_P2P_STATE_CHANGED_ACTION);
         filter.addAction(WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION);
         filter.addAction(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION);
