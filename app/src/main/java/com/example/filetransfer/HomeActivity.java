@@ -98,7 +98,7 @@ public class HomeActivity extends AppCompatActivity {
 
               //  Toast.makeText(HomeActivity.this, "WIFI is required", Toast.LENGTH_LONG).show();
                 if (wifiManager.isWifiEnabled()) {
-                    wifiManager.setWifiEnabled(false);
+//                    wifiManager.setWifiEnabled(false);
                     Toast.makeText(HomeActivity.this, "WIFI is required", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(HomeActivity.this,Client.class);
                     startActivity(i);
