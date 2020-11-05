@@ -1,15 +1,14 @@
 package com.example.filetransfer;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.Intent;
 import android.content.pm.PackageManager;
+
 import android.net.wifi.p2p.WifiP2pManager;
-import android.provider.Settings;
+
 import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
@@ -18,16 +17,16 @@ import static com.example.filetransfer.HomeActivity.MY_PERMISSIONS_REQUEST_LOCAT
 
 public class WifiDirectBroadcastReceiver extends BroadcastReceiver {
 
-    private WifiP2pManager manager;
-    private WifiP2pManager.Channel channel;
-    private HomeActivity Home_activity;
+    private WifiP2pManager mManager;
+    private WifiP2pManager.Channel mchannel;
+    private HomeActivity mActivity;
 
 
     public WifiDirectBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel, HomeActivity activity) {
 
-        this.manager = manager;
-        this.channel = channel;
-        this.Home_activity = activity;
+        this.mManager = manager;
+        this.mchannel = channel;
+        this.mActivity = activity;
 
     }
 
@@ -43,38 +42,18 @@ public class WifiDirectBroadcastReceiver extends BroadcastReceiver {
             } else {
                 Toast.makeText(context, "Wifi is OFF", Toast.LENGTH_SHORT).show();
             }
-        } else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
+        }
+        else if (WifiP2pManager.WIFI_P2P_PEERS_CHANGED_ACTION.equals(action)) {
 
-            if (manager != null) {
-                if (ActivityCompat.checkSelfPermission(this.Home_activity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                    new AlertDialog.Builder(this.Home_activity)
-                            .setTitle("LOCATION REQUIRED")
-                            .setMessage("PLEASE TURN ON LOCATION")
-                            .setPositiveButton("ALLOW", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    //Prompt the user once explanation has been shown
-                                    ActivityCompat.requestPermissions(Home_activity,
-                                            new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                            MY_PERMISSIONS_REQUEST_LOCATION);
-                                }
-                            })
-                            .setNegativeButton("DENY", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-
-                                }
-                            })
-                            .create()
-                            .show();
-                    return;
-                }
-                manager.requestPeers(channel, Home_activity.peerListListener);
+            if (ActivityCompat.checkSelfPermission(mActivity, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this.mActivity,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},MY_PERMISSIONS_REQUEST_LOCATION);
+            }
+            if(mManager!=null){
+               // mManager.requestPeers(mchannel,mActivity.peerListListener);
             }
 
         }
         else if(WifiP2pManager.WIFI_P2P_CONNECTION_CHANGED_ACTION.equals(action)) {
-
         }
         else if(WifiP2pManager.WIFI_P2P_THIS_DEVICE_CHANGED_ACTION.equals(action)) {
         }

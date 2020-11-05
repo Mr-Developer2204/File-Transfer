@@ -7,7 +7,7 @@
     android:background="#333333">
 
     <TextView
-        android:id="@+id/numbers"
+        android:id="@+id/image"
         android:layout_width="226dp"
         android:layout_height="115dp"
         android:layout_marginStart="83dp"
@@ -16,18 +16,18 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:layout_marginBottom="31dp"
-        android:background="@drawable/roundedcorner"
+        android:background="@drawable/custom_button"
         android:gravity="center"
         android:text="IMAGES"
         android:textSize="30sp"
         app:fontFamily="@font/comfortaa_bold"
-        app:layout_constraintBottom_toTopOf="@+id/family"
+        app:layout_constraintBottom_toTopOf="@+id/audio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/family"
+        android:id="@+id/audio"
         android:layout_width="226dp"
         android:layout_height="115dp"
         android:layout_marginStart="83dp"
@@ -36,18 +36,18 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:layout_marginBottom="36dp"
-        android:background="@drawable/roundedcorner"
+        android:background="@drawable/custom_button"
         android:fontFamily="@font/comfortaa_light"
         android:gravity="center"
         android:text="AUDIO"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/colors"
+        app:layout_constraintBottom_toTopOf="@+id/video"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numbers" />
+        app:layout_constraintTop_toBottomOf="@+id/image" />
 
     <TextView
-        android:id="@+id/colors"
+        android:id="@+id/video"
         android:layout_width="226dp"
         android:layout_height="115dp"
         android:layout_marginStart="83dp"
@@ -56,33 +56,32 @@
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:layout_marginBottom="32dp"
-        android:background="@drawable/roundedcorner"
+        android:background="@drawable/custom_button"
         android:gravity="center"
         android:text="VIDEOS"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/phrases"
+        app:layout_constraintBottom_toTopOf="@+id/files"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/family" />
+        app:layout_constraintTop_toBottomOf="@+id/audio" />
 
     <TextView
-        android:id="@+id/phrases"
+        android:id="@+id/files"
         android:layout_width="226dp"
         android:layout_height="115dp"
         android:layout_marginStart="83dp"
         android:layout_marginLeft="83dp"
-        android:layout_marginTop="40dp"
         android:layout_marginEnd="84dp"
         android:layout_marginRight="84dp"
         android:layout_marginBottom="99dp"
-        android:background="@drawable/roundedcorner"
+        android:background="@drawable/custom_button"
         android:gravity="center"
-        android:text="OTHERS"
+        android:text="FILES"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/colors" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
